@@ -1,0 +1,92 @@
+=head1 NAME
+
+URI::Simple - Simple way to parse uri
+
+=head1 SYNOPSIS
+
+  use URI::Simple;
+  my $uri = URI::Simple->new('http://google.com/some/path/index.html?x1=yy&x2=pp#anchor');
+  
+  print $uri->path;
+  print $uri->source;
+  ....
+  
+=head1 DESCRIPTION
+
+This module is a direct port of javascript parseURI regex by Steven Levithan
+
+Please see http://blog.stevenlevithan.com/archives/parseuri
+for the original javascript code
+
+=head2 Methods;
+
+=over 4
+
+=item path
+
+returns URI path
+
+=item query
+
+return parsed query string as hash ref key,value
+if key has multiple values value will be an array ref
+
+=item source
+
+returns URI source - ex: google.com
+
+=item protocol
+
+returns uri protocol - http, https, ftp ...
+
+=item port
+
+returns URI port if available
+
+=item directory
+
+returns URI directory = path without the file name
+
+=item file
+
+returns URI file's name : ex. index.html
+
+=item querystring
+
+return raw query string
+
+=item anchor
+
+returns anchor part of the URI
+
+=item userInfo
+
+=item user
+
+=item password
+
+=item host
+
+=item relative
+
+=item authority
+
+=back
+
+=head2 EXPORT
+
+None by default.
+
+=head1 AUTHOR
+
+Mamod A. Mehyar, E<lt>mamod.mehyar@gmail.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2012 by Mamod A. Mehyar
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.10.1 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut
