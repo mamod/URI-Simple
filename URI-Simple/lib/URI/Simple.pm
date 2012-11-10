@@ -6,7 +6,7 @@ use warnings;
 #==========================================================================
 # Regex
 #==========================================================================
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 our $REGEX = {
     
     strictMode => 0,
@@ -43,7 +43,7 @@ foreach my $method (@subs){
 sub new {
     my $class = shift;
     my $url = shift;
-    return bless ( parseUri($url) , $class);
+    return bless ( parseUri($url,shift) , $class);
 }
 
 #==========================================================================
@@ -52,9 +52,10 @@ sub new {
 sub parseUri {
     
     my $str = shift;
+    my $mode = shift;
     
     my $o = $REGEX;
-    my $m = $o->{parser}->{ $o->{strictMode} ? "strict" : "loose" };
+    my $m = $o->{parser}->{ $mode ? "strict" : "loose" };
     my @m = _exec($m,$str);
     
     my $uri = {};
@@ -129,6 +130,10 @@ URI::Simple - Simple way to parse uri
 
   use URI::Simple;
   my $uri = URI::Simple->new('http://google.com/some/path/index.html?x1=yy&x2=pp#anchor');
+  
+  #enable strict mode
+  #strict mode attempts to split URIs according to RFC 3986
+  my $uri = URI::Simple->new('http://google.com/some/path/index.html?x1=yy&x2=pp#anchor',1);
   
   print $uri->path;
   print $uri->source;

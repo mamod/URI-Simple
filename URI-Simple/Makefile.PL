@@ -8,5 +8,5 @@ WriteMakefile(
     PREREQ_PM         => {}, # none
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/URI/Simple.pm', # retrieve abstract from module
-       AUTHOR         => 'Mamod A. Mehyar <mamod.mehyar@gmail.com>') : ()),
+       AUTHOR         => 'Mamod A. Mehyar <mamod.mehyar@gmail.com>') : ())
 );
