@@ -1,4 +1,4 @@
-URI-Simple version 0.001
+URI-Simple version 1.00
 =======================
 
 This module is a direct port of javascript parseURI regex by Steven Levithan
@@ -21,7 +21,7 @@ This module requires no dependencies
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2012 by Mamod A. Mehyar
+Copyright (C) 2012-2013 by Mamod A. Mehyar
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.10.1 or,

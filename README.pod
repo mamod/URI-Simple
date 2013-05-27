@@ -7,6 +7,9 @@ URI::Simple - Simple way to parse uri
   use URI::Simple;
   my $uri = URI::Simple->new('http://google.com/some/path/index.html?x1=yy&x2=pp#anchor');
   
+  #enable strict mode
+  my $uri = URI::Simple->new('mailto:username@example.com?subject=Topic');
+  
   print $uri->path;
   print $uri->source;
   ....
@@ -14,9 +17,9 @@ URI::Simple - Simple way to parse uri
 =head1 DESCRIPTION
 
 This module is a direct port of javascript parseURI regex by Steven Levithan
+Please See L<Original Code|http://blog.stevenlevithan.com/archives/parseuri>
 
-Please see http://blog.stevenlevithan.com/archives/parseuri
-for the original javascript code
+This module will attempts to split URIs according to L<RFC 3986|http://en.wikipedia.org/wiki/URI_scheme>
 
 =head2 Methods;
 
@@ -83,7 +86,7 @@ Mamod A. Mehyar, E<lt>mamod.mehyar@gmail.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2012 by Mamod A. Mehyar
+Copyright (C) 2012-2013 by Mamod A. Mehyar
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.10.1 or,
